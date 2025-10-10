@@ -35,7 +35,7 @@ const ruleOptions = {
   hulu: false, // Hulu (禁用)
   primevideo: false, // 亚马逊prime video (禁用)
   telegram: true, // Telegram通讯软件
-  line: true, // Line通讯软件
+  line: true, // Line
   whatsapp: true, // Whatsapp
   games: true, // 游戏策略组
   japan: true, // 日本网站策略组
