@@ -18,22 +18,22 @@ const enable = true
  */
 const ruleOptions = {
   apple: true, // 苹果服务
-  microsoft: true, // 微软服务
+  microsoft: false, // 微软服务 (禁用)
   github: true, // Github服务
   google: true, // Google服务
   openai: true, // 国外AI和GPT
   spotify: true, // Spotify
   youtube: true, // YouTube
-  bahamut: true, // 巴哈姆特/动画疯
+  bahamut: false, // 巴哈姆特/动画疯 (禁用)
   netflix: true, // Netflix网飞
   tiktok: true, // 国际版抖音
-  disney: true, // 迪士尼
-  pixiv: true, // Pixiv
-  hbo: true, // HBO
-  biliintl: true, // 哔哩哔哩东南亚
-  tvb: true, // TVB
-  hulu: true, // Hulu
-  primevideo: true, // 亚马逊prime video
+  disney: false, // 迪士尼 (禁用)
+  pixiv: false, // Pixiv (禁用)
+  hbo: false, // HBO (禁用)
+  biliintl: false, // 哔哩哔哩东南亚 (禁用)
+  tvb: false, // TVB (禁用)
+  hulu: false, // Hulu (禁用)
+  primevideo: false, // 亚马逊prime video (禁用)
   telegram: true, // Telegram通讯软件
   line: true, // Line通讯软件
   whatsapp: true, // Whatsapp
@@ -437,41 +437,41 @@ function main(config) {
     })
   }
 
-  if (ruleOptions.biliintl) {
-    rules.push('GEOSITE,biliintl,哔哩哔哩东南亚')
-    config['proxy-groups'].push({
-      ...groupBaseOption,
-      name: '哔哩哔哩东南亚',
-      type: 'select',
-      proxies: ['默认节点', '直连', ...proxyGroupsRegionNames],
-      url: 'https://www.bilibili.tv/',
-      icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/bilibili_3.png',
-    })
-  }
+  // if (ruleOptions.biliintl) {
+  //   rules.push('GEOSITE,biliintl,哔哩哔哩东南亚')
+  //   config['proxy-groups'].push({
+  //     ...groupBaseOption,
+  //     name: '哔哩哔哩东南亚',
+  //     type: 'select',
+  //     proxies: ['默认节点', '直连', ...proxyGroupsRegionNames],
+  //     url: 'https://www.bilibili.tv/',
+  //     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/bilibili_3.png',
+  //   })
+  // }
 
-  if (ruleOptions.bahamut) {
-    rules.push('GEOSITE,bahamut,巴哈姆特')
-    config['proxy-groups'].push({
-      ...groupBaseOption,
-      name: '巴哈姆特',
-      type: 'select',
-      proxies: ['默认节点', '直连', ...proxyGroupsRegionNames],
-      url: 'https://ani.gamer.com.tw/ajax/getdeviceid.php',
-      icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Bahamut.png',
-    })
-  }
+  // if (ruleOptions.bahamut) {
+  //   rules.push('GEOSITE,bahamut,巴哈姆特')
+  //   config['proxy-groups'].push({
+  //     ...groupBaseOption,
+  //     name: '巴哈姆特',
+  //     type: 'select',
+  //     proxies: ['默认节点', '直连', ...proxyGroupsRegionNames],
+  //     url: 'https://ani.gamer.com.tw/ajax/getdeviceid.php',
+  //     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Bahamut.png',
+  //   })
+  // }
 
-  if (ruleOptions.disney) {
-    rules.push('GEOSITE,disney,Disney+')
-    config['proxy-groups'].push({
-      ...groupBaseOption,
-      name: 'Disney+',
-      type: 'select',
-      proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
-      url: 'https://disney.api.edge.bamgrid.com/devices',
-      icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Disney+.png',
-    })
-  }
+  // if (ruleOptions.disney) {
+  //   rules.push('GEOSITE,disney,Disney+')
+  //   config['proxy-groups'].push({
+  //     ...groupBaseOption,
+  //     name: 'Disney+',
+  //     type: 'select',
+  //     proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
+  //     url: 'https://disney.api.edge.bamgrid.com/devices',
+  //     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Disney+.png',
+  //   })
+  // }
 
   if (ruleOptions.netflix) {
     rules.push('GEOSITE,netflix,NETFLIX')
@@ -509,65 +509,65 @@ function main(config) {
     })
   }
 
-  if (ruleOptions.pixiv) {
-    rules.push('GEOSITE,pixiv,Pixiv')
-    config['proxy-groups'].push({
-      ...groupBaseOption,
-      name: 'Pixiv',
-      type: 'select',
-      proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
-      url: 'http://spclient.wg.spotify.com/signup/public/v1/account',
-      icon: 'https://play-lh.googleusercontent.com/8pFuLOHF62ADcN0ISUAyEueA5G8IF49mX_6Az6pQNtokNVHxIVbS1L2NM62H-k02rLM=w240-h480-rw',
-    })
-  }
+  // if (ruleOptions.pixiv) {
+  //   rules.push('GEOSITE,pixiv,Pixiv')
+  //   config['proxy-groups'].push({
+  //     ...groupBaseOption,
+  //     name: 'Pixiv',
+  //     type: 'select',
+  //     proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
+  //     url: 'http://spclient.wg.spotify.com/signup/public/v1/account',
+  //     icon: 'https://play-lh.googleusercontent.com/8pFuLOHF62ADcN0ISUAyEueA5G8IF49mX_6Az6pQNtokNVHxIVbS1L2NM62H-k02rLM=w240-h480-rw',
+  //   })
+  // }
 
-  if (ruleOptions.hbo) {
-    rules.push('GEOSITE,hbo,HBO')
-    config['proxy-groups'].push({
-      ...groupBaseOption,
-      name: 'HBO',
-      type: 'select',
-      proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
-      url: 'https://www.hbo.com/favicon.ico',
-      icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/HBO.png',
-    })
-  }
+  // if (ruleOptions.hbo) {
+  //   rules.push('GEOSITE,hbo,HBO')
+  //   config['proxy-groups'].push({
+  //     ...groupBaseOption,
+  //     name: 'HBO',
+  //     type: 'select',
+  //     proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
+  //     url: 'https://www.hbo.com/favicon.ico',
+  //     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/HBO.png',
+  //   })
+  // }
 
-  if (ruleOptions.tvb) {
-    rules.push('GEOSITE,tvb,TVB')
-    config['proxy-groups'].push({
-      ...groupBaseOption,
-      name: 'TVB',
-      type: 'select',
-      proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
-      url: 'https://www.tvb.com/logo_b.svg',
-      icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/TVB.png',
-    })
-  }
+  // if (ruleOptions.tvb) {
+  //   rules.push('GEOSITE,tvb,TVB')
+  //   config['proxy-groups'].push({
+  //     ...groupBaseOption,
+  //     name: 'TVB',
+  //     type: 'select',
+  //     proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
+  //     url: 'https://www.tvb.com/logo_b.svg',
+  //     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/TVB.png',
+  //   })
+  // }
 
-  if (ruleOptions.primevideo) {
-    rules.push('GEOSITE,primevideo,Prime Video')
-    config['proxy-groups'].push({
-      ...groupBaseOption,
-      name: 'Prime Video',
-      type: 'select',
-      proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
-      url: 'https://m.media-amazon.com/images/G/01/digital/video/web/logo-min-remaster.png',
-      icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Prime_Video.png',
-    })
-  }
+  // if (ruleOptions.primevideo) {
+  //   rules.push('GEOSITE,primevideo,Prime Video')
+  //   config['proxy-groups'].push({
+  //     ...groupBaseOption,
+  //     name: 'Prime Video',
+  //     type: 'select',
+  //     proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
+  //     url: 'https://m.media-amazon.com/images/G/01/digital/video/web/logo-min-remaster.png',
+  //     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Prime_Video.png',
+  //   })
+  // }
 
-  if (ruleOptions.hulu) {
-    rules.push('GEOSITE,hulu,Hulu')
-    config['proxy-groups'].push({
-      ...groupBaseOption,
-      name: 'Hulu',
-      type: 'select',
-      proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
-      url: 'https://auth.hulu.com/v4/web/password/authenticate',
-      icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Hulu.png',
-    })
-  }
+  // if (ruleOptions.hulu) {
+  //   rules.push('GEOSITE,hulu,Hulu')
+  //   config['proxy-groups'].push({
+  //     ...groupBaseOption,
+  //     name: 'Hulu',
+  //     type: 'select',
+  //     proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
+  //     url: 'https://auth.hulu.com/v4/web/password/authenticate',
+  //     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Hulu.png',
+  //   })
+  // }
 
   if (ruleOptions.telegram) {
     rules.push('GEOIP,telegram,Telegram')
@@ -685,17 +685,17 @@ function main(config) {
     })
   }
 
-  if (ruleOptions.microsoft) {
-    rules.push('GEOSITE,microsoft@cn,国内网站', 'GEOSITE,microsoft,微软服务')
-    config['proxy-groups'].push({
-      ...groupBaseOption,
-      name: '微软服务',
-      type: 'select',
-      proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
-      url: 'http://www.msftconnecttest.com/connecttest.txt',
-      icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Microsoft.png',
-    })
-  }
+  // if (ruleOptions.microsoft) {
+  //   rules.push('GEOSITE,microsoft@cn,国内网站', 'GEOSITE,microsoft,微软服务')
+  //   config['proxy-groups'].push({
+  //     ...groupBaseOption,
+  //     name: '微软服务',
+  //     type: 'select',
+  //     proxies: ['默认节点', ...proxyGroupsRegionNames, '直连'],
+  //     url: 'http://www.msftconnecttest.com/connecttest.txt',
+  //     icon: 'https://fastly.jsdelivr.net/gh/Koolson/Qure/IconSet/Color/Microsoft.png',
+  //   })
+  // }
 
   if (ruleOptions.japan) {
     rules.push(
